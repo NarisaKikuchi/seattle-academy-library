@@ -59,10 +59,10 @@ public class AccountController {
         // TODO バリデーションチェック、パスワード一致チェック実装
         if(password.length() >= 8 && password.matches("^[0-9a-zA-Z]+$")) {
         	if (password. equals (passwordForCheck)) {
-        		userInfo.setPassword(password);
-            usersService.registUser(userInfo);
-            model.addAttribute("bookList", booksService.getBookList());
-            return "login";
+        			userInfo.setPassword(password);
+        			usersService.registUser(userInfo);
+        			model.addAttribute("bookList", booksService.getBookList());
+        			return "login";
         	} else {
         		model.addAttribute("errorPassword", "パスワードが一致しません。");
         		return "createAccount";
@@ -74,41 +74,6 @@ public class AccountController {
          	 return "createAccount";
         }
         
-        
-        
-//        if (password.length() >= 8 && password.matches("^[0-9a-zA-Z]+$")) {
-//        	if (password.equals(passwordForCheck)); {
-//        	userInfo.setPassword(password);
-//        	usersService.registUser(userInfo);
-//        	model.addAttribute("booklist", booksService.getBookList());
-//        	return "home";
-//        	} else {
-//        		model.addAttribute("errorPassword", "パスワードが一致しません");
-//        		return "createAccount";
-//        	}
-//    	
-//        } else {
-//        	model.addAttribute("errorPassword", "パスワードは半角英数８文字以上");
-//        	return "createAccount";
-//        	
-//        }
-        
-        
-//        if (password.length() >= 8 && password.matches("^[0-9a-zA-Z]+$")) {	
-//        	if (password.equals(passwordForCheck));
-//        		userInfo.setPassword(password);
-//        		usersService.registUser(userInfo);
-//        		model.addAttribute("bookList", booksService.getBookList());
-//        		return "home";
-//            } else {
-//        		model.addAttribute("errorpassword", "パスワードが一致しません");
-//        		return "createAccount";
-//        	} 
-//        
-//        } else { 
-//        	model.addAttribute("errorpassword", "パスワードは半角英数８文字以上");
-//        	return "createAccount";
-//        }
     }
     
 }
