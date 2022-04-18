@@ -64,13 +64,13 @@ public class AccountController {
         			model.addAttribute("bookList", booksService.getBookList());
         			return "login";
         	} else {
-        		model.addAttribute("errorPassword", "パスワードが一致しません。");
+        		model.addAttribute("errorPassword", "パスワードが一致しません");
         		return "createAccount";
         	}
          	
          	
         } else {
-         	 model.addAttribute("errorPassword", "パスワードは半角英数8文字以上です。");
+         	 model.addAttribute("errorPassword", "パスワードは半角英数8文字以上です");
          	 return "createAccount";
         }
         
