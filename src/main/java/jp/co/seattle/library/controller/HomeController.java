@@ -31,10 +31,5 @@ public class HomeController {
         return "home";
     }
     
-    string[] booklist = {};
-    Arrays.sort(booklist);
-    
-    for string 
-    
 
 }
