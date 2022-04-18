@@ -30,5 +30,11 @@ public class HomeController {
         model.addAttribute("bookList", booksService.getBookList());
         return "home";
     }
+    
+    string[] booklist = {};
+    Arrays.sort(booklist);
+    
+    for string 
+    
 
 }

@@ -52,12 +52,10 @@ public class UsersService {
         		+ "'";
         
         try {
-        	//例外が起こる可能性のある処理＝正しい処理、やりたい処理を書く
         	UserInfo selectedUserInfo = jdbcTemplate.queryForObject(sql, new UserCountRowMapper());
         	return selectedUserInfo;
         	
         } catch (Exception e){
-        	//例外が怒った場合の処理
         	return null;
         }
         
