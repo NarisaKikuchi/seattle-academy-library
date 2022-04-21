@@ -23,6 +23,7 @@ public class BooksService {
     final static Logger logger = LoggerFactory.getLogger(BooksService.class);
     @Autowired
     private JdbcTemplate jdbcTemplate;
+    
 
     /**
      * 書籍リストを取得する
@@ -37,7 +38,9 @@ public class BooksService {
                 new BookInfoRowMapper());
 
         return getedBookList;
+        
     }
+   
 
     /**
      * 書籍IDに紐づく書籍詳細情報を取得する
@@ -72,4 +75,17 @@ public class BooksService {
 
         jdbcTemplate.update(sql);
     }
+    
+    /**
+     * 書籍を削除する
+     * 
+     */
+    public void deleteBook(int bookId) {
+    	
+    	String sql = "delete from books where id ="
+    			+ bookId + ";";	
+    	
+    	jdbcTemplate.update(sql);
+    }
+    
 }
