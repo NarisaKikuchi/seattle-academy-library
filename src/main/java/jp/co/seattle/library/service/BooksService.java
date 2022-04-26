@@ -61,7 +61,7 @@ public class BooksService {
     }
     
     /**
-     * 書籍IDに紐づく書籍詳細情報を取得して表示する
+     * 最新の書籍IDを取得する
      * 詳細画面
      *
      * @return bookId 書籍ID
