@@ -64,8 +64,7 @@ public class BooksService {
      * 書籍IDに紐づく書籍詳細情報を取得して表示する
      * 詳細画面
      *
-     * @param bookId 書籍ID
-     * @return 書籍情報
+     * @return bookId 書籍ID
      */
     public int getMaxId() {
 
