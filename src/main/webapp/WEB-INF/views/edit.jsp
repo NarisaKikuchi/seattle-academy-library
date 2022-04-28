@@ -54,39 +54,27 @@
                     </c:if>
                     <div>
                         <span>書籍名</span><span class="care care2">必須</span>
-                        <c:if test="${!empty bookDetailsInfo}">
                             <input type="text" name="title" value="${bookDetailsInfo.title}">
-                        </c:if>
                     </div>
                     <div>
                         <span>著者名</span><span class="care care2">必須</span>
-                        <c:if test="${!empty bookDetailsInfo}">
                             <input type="text" name="author" value="${bookDetailsInfo.author}">
-                        </c:if>
                     </div>
                     <div>
                         <span>出版社</span><span class="care care2">必須</span>
-                        <c:if test="${!empty bookDetailsInfo}">
                             <input type="text" name="publisher" value="${bookDetailsInfo.publisher}">
-                        </c:if>
                     </div>
                     <div>
                         <span>出版日</span><span class="care care2">必須</span>
-                        <c:if test="${!empty bookDetailsInfo}">
                             <input type="text" name="publishDate" value="${bookDetailsInfo.publishDate}">
-                        </c:if>
                     </div>
                     <div>
                         <span>ISBN</span><span class="care care1">任意</span>
-                        <c:if test="${!empty bookDetailsInfo}">
                             <input type="text" name="ISBN" value="${bookDetailsInfo.ISBN}">
-                        </c:if>
                     </div>
                     <div>
                         <span>説明文</span><span class="care care1">任意</span>
-                        <c:if test="${!empty bookDetailsInfo}">
                             <input type="text" name="description" value="${bookDetailsInfo.description}">
-                        </c:if>
                         <input type="hidden" id="bookId" name="bookId" value="${bookDetailsInfo.bookId}">
                     </div>
                 </div>
