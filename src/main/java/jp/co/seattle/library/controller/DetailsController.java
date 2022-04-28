@@ -22,7 +22,7 @@ public class DetailsController {
     final static Logger logger = LoggerFactory.getLogger(BooksService.class);
 
     @Autowired
-    private BooksService bookdService;
+    private BooksService booksService;
 
     /**
      * 詳細画面に遷移する
@@ -37,9 +37,8 @@ public class DetailsController {
             @RequestParam("bookId") Integer bookId,
             Model model) {
         // デバッグ用ログ
-        logger.info("Welcome detailsControler.java! The client locale is {}.", locale);
-
-        model.addAttribute("bookDetailsInfo", bookdService.getBookInfo(bookId));
+    	logger.info("Welcome detailsControler.java! The client locale is {}.", locale);
+        model.addAttribute("bookDetailsInfo", booksService.getBookInfo(bookId));
 
         return "details";
     }
