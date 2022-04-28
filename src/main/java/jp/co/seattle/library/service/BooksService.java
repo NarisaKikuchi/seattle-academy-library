@@ -75,8 +75,69 @@ public class BooksService {
 
         return bookId;
     }
-
+    
+    /**
+     * 書籍情報を更新する
+     * 編集画面
+     *
+     * @param
+     */
+    public void updatebookInfo(BookDetailsInfo bookInfo) {
+    	String sql;
+        // JSPに渡すデータを設定する
+    	if (bookInfo.getThumbnailUrl() != null) {
+    			sql = "UPDATE books SET title = "
+            		+ "'" + bookInfo.getTitle() 
+            		+ "'" + "," 
+            		+ "author ="
+            		+ "'" + bookInfo.getAuthor() 
+            		+ "'" + "," 
+            		+ "publisher ="
+            		+ "'" + bookInfo.getPublisher() 
+            		+ "'" + "," 
+            		+ "publish_date ="
+            		+ "'" + bookInfo.getPublishDate() 
+            		+ "'" + "," 
+            		+ "isbn ="
+            		+ "'" + bookInfo.getISBN() 
+            		+ "'" + "," 
+            		+ "description ="
+            		+ "'" + bookInfo.getDescription()
+            		+ "'" + "," 
+            		+ "thumbnail_url ="
+            		+ "'" + bookInfo.getThumbnailUrl()
+            		+ "'"
+            		+ "where id =" 
+            		+ bookInfo.getBookId()
+            		+ ";";
+    	} else {
+    			sql = "UPDATE books SET title = "
+            		+ "'" + bookInfo.getTitle() 
+            		+ "'" + "," 
+            		+ "author ="
+            		+ "'" + bookInfo.getAuthor() 
+            		+ "'" + "," 
+            		+ "publisher ="
+            		+ "'" + bookInfo.getPublisher() 
+            		+ "'" + "," 
+            		+ "publish_date ="
+            		+ "'" + bookInfo.getPublishDate() 
+            		+ "'" + "," 
+            		+ "isbn ="
+            		+ "'" + bookInfo.getISBN() 
+            		+ "'" + "," 
+            		+ "description ="
+            		+ "'" + bookInfo.getDescription()
+            		+ "'"
+            		+ "where id =" 
+            		+ bookInfo.getBookId()
+            		+ ";";
+    	}
+    	
+        jdbcTemplate.update(sql);
+    }
    
+    
     /**
      * 書籍を登録する
      *
