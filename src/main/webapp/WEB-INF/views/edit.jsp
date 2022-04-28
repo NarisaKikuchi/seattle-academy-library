@@ -35,14 +35,14 @@
                 <div>
                     <span>書籍の画像</span> <span class="care care1">任意</span>
                     <div class="book_thumnail">
-                    <a href="${bookDetailsInfo.thumbnailUrl}" data-lightbox="image-1"> <c:if test="${bookDetailsInfo.thumbnailUrl == 'null'}">
-                            <img class="book_noimg" src="resources/img/noImg.png">
-                        </c:if> <c:if test="${bookDetailsInfo.thumbnailUrl != 'null'}">
-                            <img class="book_noimg" src="${bookDetailsInfo.thumbnailUrl}">
-                        </c:if> <input type="hidden" name="bookId" value="${bookDetailsInfo.bookId}">
-                    </a>
+                        <a href="${bookDetailsInfo.thumbnailUrl}" data-lightbox="image-1"> <c:if test="${bookDetailsInfo.thumbnailUrl == 'null'}">
+                                <img class="book_noimg" src="resources/img/noImg.png">
+                            </c:if> <c:if test="${bookDetailsInfo.thumbnailUrl != 'null'}">
+                                <img class="book_noimg" src="${bookDetailsInfo.thumbnailUrl}">
+                            </c:if> <input type="hidden" name="bookId" value="${bookDetailsInfo.bookId}">
+                        </a>
                     </div>
-                            <input type="file" accept="image/*" name="thumbnail" id="thumbnail">
+                    <input type="file" accept="image/*" name="thumbnail" id="thumbnail">
                 </div>
                 <div class="content_right">
                     <c:if test="${!empty addErrorMessage}">
@@ -53,29 +53,22 @@
                         </div>
                     </c:if>
                     <div>
-                        <span>書籍名</span><span class="care care2">必須</span>
-                            <input type="text" name="title" value="${bookDetailsInfo.title}">
+                        <span>書籍名</span><span class="care care2">必須</span> <input type="text" name="title" value="${bookDetailsInfo.title}">
                     </div>
                     <div>
-                        <span>著者名</span><span class="care care2">必須</span>
-                            <input type="text" name="author" value="${bookDetailsInfo.author}">
+                        <span>著者名</span><span class="care care2">必須</span> <input type="text" name="author" value="${bookDetailsInfo.author}">
                     </div>
                     <div>
-                        <span>出版社</span><span class="care care2">必須</span>
-                            <input type="text" name="publisher" value="${bookDetailsInfo.publisher}">
+                        <span>出版社</span><span class="care care2">必須</span> <input type="text" name="publisher" value="${bookDetailsInfo.publisher}">
                     </div>
                     <div>
-                        <span>出版日</span><span class="care care2">必須</span>
-                            <input type="text" name="publishDate" value="${bookDetailsInfo.publishDate}">
+                        <span>出版日</span><span class="care care2">必須</span> <input type="text" name="publishDate" value="${bookDetailsInfo.publishDate}">
                     </div>
                     <div>
-                        <span>ISBN</span><span class="care care1">任意</span>
-                            <input type="text" name="ISBN" value="${bookDetailsInfo.ISBN}">
+                        <span>ISBN</span><span class="care care1">任意</span> <input type="text" name="ISBN" value="${bookDetailsInfo.ISBN}">
                     </div>
                     <div>
-                        <span>説明文</span><span class="care care1">任意</span>
-                            <input type="text" name="description" value="${bookDetailsInfo.description}">
-                        <input type="hidden" id="bookId" name="bookId" value="${bookDetailsInfo.bookId}">
+                        <span>説明文</span><span class="care care1">任意</span> <input type="text" name="description" value="${bookDetailsInfo.description}"> <input type="hidden" id="bookId" name="bookId" value="${bookDetailsInfo.bookId}">
                     </div>
                 </div>
             </div>
