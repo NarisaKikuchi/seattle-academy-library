@@ -34,7 +34,7 @@
             <form method="post" action="bulkRegist" enctype="multipart/form-data">
                 <h2>CSVファイルをアップロードすることで書籍を一括で登録できます。</h2>
                 <div class="caution">
-                    <p>「書籍名,著者名,出版社,出版日,ISBN」の形式で記載してください。</p>
+                    <p>「書籍名,著者名,出版社,出版日,ISBN,説明文」の形式で記載してください。</p>
                     <p>※サムネイル画像は一括登録できません。編集画面で１冊単位で登録してください。</p>
                 </div>
                 <input type="file" accept=".csv" name="file">

@@ -92,6 +92,7 @@ public class BulkBooksController {
 				bookInfo.setPublisher(bookList[2]);
 				bookInfo.setPublishDate(bookList[3]);
 				bookInfo.setISBN(bookList[4]);
+				bookInfo.setDescription(bookList[5]);
 
 				// 書籍情報に一括登録する
 				booksService.registBook(bookInfo);
