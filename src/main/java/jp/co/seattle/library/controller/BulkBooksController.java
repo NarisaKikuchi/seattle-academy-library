@@ -45,7 +45,6 @@ public class BulkBooksController {
 	@RequestMapping(value = "/bulkRegist", method = RequestMethod.POST)
 	public String uploadFile(@RequestParam("file") MultipartFile File, Model model) {
 
-
 		try (BufferedReader br = new BufferedReader(
 				new InputStreamReader(File.getInputStream(), StandardCharsets.UTF_8))) {
 			String line;
@@ -68,7 +67,7 @@ public class BulkBooksController {
 						|| StringUtils.isEmpty(split[3]) || !(split[3].matches("^[0-9]{8}"))
 						|| split[4].length() != 0 && !(split[4].matches("^[0-9]{10}|[0-9]{13}"))) {
 					errorlist.add(count);
-					
+
 				} else {
 					booksList.add(split);
 				}
@@ -80,28 +79,28 @@ public class BulkBooksController {
 					addErrorMessage.add(errorlist.get(i) + "行目にエラーがあります。");
 				}
 
-				for (int i = 0; i < booksList.size(); i++) {
-					String[] bookList = booksList.get(i);
-					
-					BookDetailsInfo bookInfo = new BookDetailsInfo();
-					bookInfo.setTitle(bookList[0]);
-					bookInfo.setAuthor(bookList[1]);
-					bookInfo.setPublisher(bookList[2]);
-					bookInfo.setPublishDate(bookList[3]);
-					bookInfo.setISBN(bookList[4]);
-
-					// 書籍情報に一括登録する
-					booksService.registBook(bookInfo);
-				}
-
 				model.addAttribute("addErrorMessage", addErrorMessage);
 				return "bulkBook";
+			}
+
+			for (int i = 0; i < booksList.size(); i++) {
+				String[] bookList = booksList.get(i);
+
+				BookDetailsInfo bookInfo = new BookDetailsInfo();
+				bookInfo.setTitle(bookList[0]);
+				bookInfo.setAuthor(bookList[1]);
+				bookInfo.setPublisher(bookList[2]);
+				bookInfo.setPublishDate(bookList[3]);
+				bookInfo.setISBN(bookList[4]);
+
+				// 書籍情報に一括登録する
+				booksService.registBook(bookInfo);
+
 			}
 
 		} catch (IOException e) {
 			throw new RuntimeException("ファイルが読み込めません", e);
 		}
-
 
 		return "redirect:home";
 	}
