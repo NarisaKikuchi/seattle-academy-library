@@ -30,7 +30,6 @@
     </header>
     <main>
         <h1>一括登録</h1>
-        <div class="content_body bulk_book_content">
             <div class="bulk_form">
                 <form method="post" action="bulkRegist" enctype="multipart/form-data">
                     <h2>CSVファイルをアップロードすることで書籍を一括で登録できます。</h2>
